@@ -7,37 +7,40 @@ VOID StartClient();
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	if (TRUE)
-	{
-		StartClient();
-		return 0;
-	}
+	
+	return 0;
+}
+
+void TestInJection()
+{
 	HOOKPROC pFunc = NULL;
 	HMODULE hdll = LoadLibraryW(L"Win32Project1.dll");
-	
+
 	pFunc = (HOOKPROC)GetProcAddress(hdll, "_CallWndProc@12");
 	if (pFunc == NULL){
 		FreeLibrary(hdll);
 		return 0;
 	}
-	
+
 	HINSTANCE hInstApp = GetModuleHandle(NULL);
-	HHOOK hhok = SetWindowsHookExW(WH_CALLWNDPROC, pFunc, hdll, 0);
-	
-	if ( !hhok)
+	HHOOK hhok = SetWindowsHookExW(WH_CALLWNDPROC/*WH_SYSMSGFILTER*/, pFunc, hdll, 0);
+
+	if (!hhok)
 	{
+		DWORD nCode = GetLastError();
+
 		return 0;
 	}
-	for ( int i = 0 ; i < 20; i++ )
+	for (int i = 0; i < 1; i++)
 	{
 		Sleep(1000);
 	}
-
+	HWND hwnd = FindWindowA("TLoginForm", NULL);
+	SendMessageA(hwnd, WM_USER + 100, 0, 0);
 	MessageBoxA(NULL, "", "", MB_OK);
 	UnhookWindowsHookEx(hhok);
 	FreeLibrary(hdll);
-	char a = getchar();
-	return 0;
+
 }
 
 #define MY_ADDRASS	"127.0.0.1"
@@ -64,7 +67,7 @@ VOID StartClient()
 
 	//向服务器发送数据
 	lstrcpyA(buf, "Trans OK");
-	retVal = send(sHost, buf, strlen(buf), 0);
+	retVal = send(sHost, buf, strlen(buf),  0);
 
 	//退出
 	closesocket(sHost);    //关闭套接字

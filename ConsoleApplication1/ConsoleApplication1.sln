@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Win32Project1", "Win32Proje
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestException", "TestException\TestException.vcxproj", "{FB1B0C8C-9B4D-4B2C-84E3-F60FE782C4A2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyRobot", "MyRobot\MyRobot.vcxproj", "{53C86C84-ADC5-43FF-989B-1C40CA00D8F5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Win32Robot", "Win32Robot\Win32Robot.vcxproj", "{47E41CBF-DAE2-4DCA-A2EA-2FD32E32F46F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +31,14 @@ Global
 		{FB1B0C8C-9B4D-4B2C-84E3-F60FE782C4A2}.Debug|Win32.Build.0 = Debug|Win32
 		{FB1B0C8C-9B4D-4B2C-84E3-F60FE782C4A2}.Release|Win32.ActiveCfg = Release|Win32
 		{FB1B0C8C-9B4D-4B2C-84E3-F60FE782C4A2}.Release|Win32.Build.0 = Release|Win32
+		{53C86C84-ADC5-43FF-989B-1C40CA00D8F5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53C86C84-ADC5-43FF-989B-1C40CA00D8F5}.Debug|Win32.Build.0 = Debug|Win32
+		{53C86C84-ADC5-43FF-989B-1C40CA00D8F5}.Release|Win32.ActiveCfg = Release|Win32
+		{53C86C84-ADC5-43FF-989B-1C40CA00D8F5}.Release|Win32.Build.0 = Release|Win32
+		{47E41CBF-DAE2-4DCA-A2EA-2FD32E32F46F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47E41CBF-DAE2-4DCA-A2EA-2FD32E32F46F}.Debug|Win32.Build.0 = Debug|Win32
+		{47E41CBF-DAE2-4DCA-A2EA-2FD32E32F46F}.Release|Win32.ActiveCfg = Release|Win32
+		{47E41CBF-DAE2-4DCA-A2EA-2FD32E32F46F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
